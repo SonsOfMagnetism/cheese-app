@@ -71,7 +71,7 @@ app.post("/cheese", async (req, res) => {
 })
 
 // Show
-app.get("/people/:id", async (req, res) => {
+app.get("/cheese/:id", async (req, res) => {
     try {
         res.json(await Cheese.findById(req,params.id))
     }catch (error) {
