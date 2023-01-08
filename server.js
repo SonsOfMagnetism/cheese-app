@@ -60,8 +60,16 @@ app.put("/cheese/:id", async (req, res) => {
 
 app.delete("/cheese/:id", async (req, res) => {
     try {
-        res.json(await Cheese.findById(req.params.id))
+        res.json(await Cheese.findByIdAndRemove(req.params.id))
     } catch (error) {
+        res.status(400).json(error)
+    }
+})
+
+app.get("/people/:id", async (req, res) => {
+    try {
+        res.json(await Cheese.findById(req,params.id))
+    }catch (error) {
         res.status(400).json(error)
     }
 })
