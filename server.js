@@ -74,7 +74,7 @@ app.post("/cheese", async (req, res) => {
 app.get("/cheese/:id", async (req, res) => {
     try {
         res.json(await Cheese.findById(req,params.id))
-    }catch (error) {
+    } catch (error) {
         res.status(400).json(error)
     }
 })
